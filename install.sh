@@ -4,6 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODE="${1:-all}"
 install_hermes() {
   mkdir -p "$HOME/.hermes/skills/fable-system" "$HOME/.hermes/agents/fable-system"
+  cp "$ROOT/README.md" "$ROOT/agent.md" "$HOME/.hermes/agents/fable-system/" 2>/dev/null || true
   cp -R "$ROOT"/references "$ROOT"/scripts "$ROOT"/templates "$ROOT"/prompts "$ROOT"/project-knowledge "$ROOT"/repo "$ROOT"/playbooks "$ROOT"/research "$HOME/.hermes/agents/fable-system/" 2>/dev/null || true
   cp "$ROOT/hermes/SKILL.md" "$HOME/.hermes/skills/fable-system/SKILL.md"
   mkdir -p "$HOME/.hermes/skills/fable-system/references" "$HOME/.hermes/skills/fable-system/scripts" "$HOME/.hermes/skills/fable-system/templates"
